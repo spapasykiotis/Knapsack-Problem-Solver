@@ -59,9 +59,6 @@ The following algorithmic approaches must be implemented:
 - **e) B&B (BFS)**:  
   **Branch and Bound** technique using **Best First Search** strategy.
 
-- **f) (Bonus) B&B (LDS)**:  
-  **Branch and Bound** using **Limited Discrepancy Search**—a variant that explores decisions deviating from a greedy heuristic up to a limited discrepancy level.
-
 ---
 
 ## Output Files
