@@ -68,12 +68,12 @@ The following algorithmic approaches must be implemented:
 
 The solution files must include:
 
-- `pr1.txt` -
-- `pr2.txt` – 
-- `pr3.txt` – 
-- `pr4.txt` – 
-- `pr5.txt` – 
-- `pr6.txt` – 
+- `pr1.txt` 
+- `pr2.txt`  
+- `pr3.txt`  
+- `pr4.txt`  
+- `pr5.txt`  
+- `pr6.txt`  
 
 Each file must contain **five lines**.  
 Each line should be a list of **0s and 1s**, separated by commas, representing the item selection for one instance:
