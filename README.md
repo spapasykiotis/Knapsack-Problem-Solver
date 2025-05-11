@@ -30,14 +30,6 @@ Your submission will be evaluated based on the following:
 
 ---
 
-## Output Instructions
-
-Results must be entered in the Excel file named **`solutions.xls`**.
-
-- The values shown in *Figure 1* (not included here) are randomly generated and are for illustrative purposes only.
-
----
-
 ## Programming Techniques
 
 The following algorithmic approaches are implemented:
@@ -64,17 +56,16 @@ The following algorithmic approaches are implemented:
 
 ## Output Files
 
-The solution files must include:
+The solution files have this format:
 
-- `pr1.txt` 
-- `pr2.txt`  
-- `pr3.txt`  
-- `pr4.txt`  
-- `pr5.txt`  
-- `pr6.txt`  
+- `pr1.csv` 
+- `pr2.csv`  
+- `pr3.csv`  
+- `pr4.csv`  
+- `pr5.csv`  
+- `pr6.csv`  
 
-Each file contains **five lines**.  
-Each line is a list of **0s and 1s**, separated by commas, representing the item selection for one instance:
+Each file contains **one line** which is a list of **0s and 1s**, separated by commas, representing the item selection for one instance:
 
 - `1` means the item is **selected**.  
 - `0` means the item is **not selected**.
