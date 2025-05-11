@@ -1,5 +1,14 @@
 from time import perf_counter
-dataset = "datasets\pr3_200.txt"    # Select Dataset
+import csv
+import os
+
+
+# Ensure output directory exists
+os.makedirs("solutions", exist_ok=True)
+dataset_name = "pr2_50"
+
+solution_dir = "solutions/"+dataset_name+"_dynamic.csv" # Updated to CSV
+dataset_dir = "datasets/"+dataset_name+".csv"  
 
 def knapsack(k, weights, values, n, solution):
     array = [[0 for _ in range(k + 1)] for _ in range(n + 1)]
@@ -28,16 +37,15 @@ def knapsack(k, weights, values, n, solution):
 
 
 def main():
-    start_time = perf_counter()
-
-    with open(dataset) as f:
-        items = f.readlines()
 
     list_of_items = []
 
-    for line in items:
-        x = line.rstrip().split("\t")
-        list_of_items.append((int(x[0]), int(x[1])))
+    with open(dataset_dir, newline='', encoding='utf-8-sig') as csvfile:
+        reader = csv.reader(csvfile)
+        for row in reader:
+            list_of_items.append((int(row[0]), int(row[1])))
+
+    start_time = perf_counter()
 
     info = list_of_items.pop(0)
     capacity = info[0]
@@ -61,8 +69,10 @@ def main():
     t = end_time - start_time
     print(f"Execution time is: {t*1000:.4f} ms")
     
-    # with open("Solutions/pr6_10000_solutions", "a") as f:
-    #     f.write("\n" + str(decision_list))
+    # Save decision list to a CSV file
+    with open(solution_dir, "w", newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(decision_list)  # One row with all decisions
 
 
 main()

@@ -32,17 +32,15 @@ Your submission will be evaluated based on the following:
 
 ## Output Instructions
 
-Your results must be entered in the Excel file named **`solutions.xls`**.
+Results must be entered in the Excel file named **`solutions.xls`**.
 
-- First, **clear** the existing data in the **blue-shaded areas** of the Excel sheet.
-- Then, **fill them in** with your generated results.
 - The values shown in *Figure 1* (not included here) are randomly generated and are for illustrative purposes only.
 
 ---
 
 ## Programming Techniques
 
-The following algorithmic approaches must be implemented:
+The following algorithmic approaches are implemented:
 
 - **a) Random**:  
   Random selection of items until the knapsack is full.
@@ -75,8 +73,8 @@ The solution files must include:
 - `pr5.txt`  
 - `pr6.txt`  
 
-Each file must contain **five lines**.  
-Each line should be a list of **0s and 1s**, separated by commas, representing the item selection for one instance:
+Each file contains **five lines**.  
+Each line is a list of **0s and 1s**, separated by commas, representing the item selection for one instance:
 
 - `1` means the item is **selected**.  
 - `0` means the item is **not selected**.

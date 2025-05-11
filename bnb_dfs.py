@@ -1,5 +1,14 @@
 from time import perf_counter
-dataset = "datasets\pr2_50.txt"    # Select Dataset
+import csv
+import os
+
+
+# Ensure output directory exists
+os.makedirs("solutions", exist_ok=True)
+dataset_name = "pr2_50"
+
+solution_dir = "solutions/"+dataset_name+"_bnb_dfs.csv" # Updated to CSV
+dataset_dir = "datasets/"+dataset_name+".csv"
 
 class ItemValue:
     def __init__(self, wt, val, ind):
@@ -75,21 +84,17 @@ def createDecisionList(sol):
     print("Items inside the bug: ", decision_list)
     print("Best Value: ", best_solution[0])
     print("Remaining weight:", best_solution[2])
-
-    # with open("Solutions/pr6_10000_solutions", "a") as f:
-    #     f.write("\n" + str(decision_list))
-
-
-start_time = perf_counter()
-
-with open(dataset) as f:
-    items = f.readlines()
+    
+    return decision_list
 
 list_of_items = []
 
-for line in items:
-    x = line.rstrip().split("\t")
-    list_of_items.append((int(x[0]), int(x[1])))
+with open(dataset_dir, newline='', encoding='utf-8-sig') as csvfile:
+    reader = csv.reader(csvfile)
+    for row in reader:
+        list_of_items.append((int(row[0]), int(row[1])))
+
+start_time = perf_counter()
 
 info = list_of_items.pop(0)
 capacity = info[0]
@@ -158,9 +163,14 @@ while len(stack) > 0:
     previous_id = id
     # print("")
 
-createDecisionList(solutions)
+decision_list = createDecisionList(solutions)
 
 end_time = perf_counter()
 t = end_time - start_time
 print(f"Execution time is: {t*1000:.4f} ms")
 print("Total calculation loops:", loops)
+
+# Save decision list to a CSV file
+with open(solution_dir, "w", newline='') as f:
+    writer = csv.writer(f)
+    writer.writerow(decision_list)  # One row with all decisions
